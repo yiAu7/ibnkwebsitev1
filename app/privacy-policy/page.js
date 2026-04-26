@@ -1,224 +1,250 @@
-'use client';
-
-import { useEffect } from 'react';
+export const metadata = {
+  title: 'iBnk – Privacy Policy',
+  description: 'How iBnk collects, uses, and protects your information.',
+};
 
 export default function PrivacyPolicyPage() {
-  useEffect(() => {
-    const links = document.querySelectorAll('._policy-sidebar a');
-    const sections = [];
-    links.forEach((link) => {
-      const id = link.getAttribute('href').replace('#', '');
-      const el = document.getElementById(id);
-      if (el) sections.push({ id, el, link });
-    });
-
-    function onScroll() {
-      const scrollY = window.scrollY + 200;
-      let current = sections[0];
-      for (let i = 0; i < sections.length; i++) {
-        if (sections[i].el.offsetTop <= scrollY) {
-          current = sections[i];
-        }
-      }
-      links.forEach((l) => { l.removeAttribute('data-active'); });
-      if (current) current.link.setAttribute('data-active', 'true');
-    }
-
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
-    <>
-      {/* ===== HERO SECTION ===== */}
-      <header className="_policy-hero">
-        <div className="g-row hero-content color-white">
-          <div className="hero-heading">
-            <h1 className="title-2 -medium">Privacy Policy</h1>
-          </div>
-          <div className="hero-description">
-            <p className="subhead-2 -medium">Last updated: April 2026</p>
-          </div>
-        </div>
-      </header>
-
-      {/* ===== POLICY CONTENT ===== */}
-      <section className="_policy-section">
-        <div className="section-bg"></div>
-        <div className="section-inner py-136-64">
-          <div className="g-row">
-
-            {/* Sidebar Navigation */}
-            <div className="g-col xxl-3 md-3 sm-16 xs-16">
-              <nav className="_policy-sidebar">
-                <a href="#introduction" data-active="true">Introduction</a>
-                <a href="#who-we-are">1. Who We Are</a>
-                <a href="#data-collect">2. Data We Collect</a>
-                <a href="#how-collected">3. How Data Is Collected</a>
-                <a href="#how-we-use">4. How We Use Your Data</a>
-                <a href="#sharing">5. Sharing Your Data</a>
-                <a href="#international">6. International Transfers</a>
-                <a href="#security">7. Data Security</a>
-                <a href="#retention">8. Data Retention</a>
-                <a href="#your-rights">9. Your Rights</a>
-                <a href="#cookies">10. Cookies</a>
-                <a href="#contact">11. Contact Us</a>
-              </nav>
-            </div>
-
-            {/* Content */}
-            <div className="g-col xxl-10 md-10 sm-16 xs-16">
-              <div className="_policy-content">
-
-                <h2 id="introduction">Introduction</h2>
-
-                <p>Welcome to the Privacy Policy of iBnk.</p>
-
-                <p>iBnk is operated by IBNK VAULT INC., a company incorporated in British Columbia, Canada (Incorporation No. BC1571168), registered with the Financial Transactions and Reports Analysis Centre of Canada (FINTRAC) as a Money Services Business (MSB), Registration No. N3000001312. In Australia, iBnk services are provided by Inteelifusion Pty Ltd, registered with AUSTRAC as a Digital Currency Exchange provider (DCE100905510-001) and Independent Remittance Dealer (IND100905510-001).</p>
-
-                <p>We respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, store, and protect information about you when you visit our website (ibnk.xyz) or use our services. It also explains your privacy rights and how the law protects you.</p>
-
-                <p>Please read this policy carefully. If you have questions, contact us at <a href="mailto:support@ibnk.xyz">support@ibnk.xyz</a>.</p>
-
-                <h2 id="who-we-are">1. Who We Are</h2>
-
-                <h3>1.1 Data Controllers</h3>
-
-                <p>The data controllers responsible for your personal data are:</p>
-
-                <p><strong>IBNK VAULT INC.</strong><br />
-                Registered address: 200-7404 King George Boulevard, Surrey, BC V3W 1N6, Canada<br />
-                Office: 6060 Silver Drive, Suite 300, Burnaby, BC V5H 0H5, Canada<br />
-                Email: <a href="mailto:support@ibnk.xyz">support@ibnk.xyz</a></p>
-
-                <p><strong>Inteelifusion Pty Ltd</strong> (for Australian services)<br />
-                525 Collins Street, Melbourne, Australia<br />
-                Email: <a href="mailto:support@ibnk.xyz">support@ibnk.xyz</a></p>
-
-                <h3>1.2 Scope</h3>
-
-                <p>This policy applies when you: visit ibnk.xyz; enquire about or apply for our services; use our cross-border payment, digital asset custody, agentic payment, or embedded finance services; or communicate with us.</p>
-
-                <p>This website is not intended for children under the age of 18, and we do not knowingly collect personal data relating to minors.</p>
-
-                <h2 id="data-collect">2. Data We Collect</h2>
-
-                <p>We may collect, use, store, and transfer different kinds of personal data about you, which we have grouped as follows:</p>
-
-                <p><strong>Identity Data</strong> — full name, date of birth, government-issued identification numbers, passport or national ID details, and other Know Your Customer (KYC) information.</p>
-
-                <p><strong>Contact Data</strong> — email address, telephone number, billing address, and country of residence.</p>
-
-                <p><strong>Financial Data</strong> — bank account details, payment card details (where relevant), transaction history, wallet addresses, and source of funds information.</p>
-
-                <p><strong>Technical Data</strong> — IP address, browser type and version, device identifiers, time zone, operating system, and other technology on the devices you use to access our website.</p>
-
-                <p><strong>Usage Data</strong> — information about how you use our website and services, including pages visited, time spent, and referral sources.</p>
-
-                <p><strong>Communications Data</strong> — preferences for receiving marketing from us, and records of correspondence.</p>
-
-                <p><strong>Compliance Data</strong> — information required by anti-money laundering (AML), counter-terrorism financing (CTF), and sanctions screening obligations, including politically exposed person (PEP) status and adverse media.</p>
-
-                <p>We do not collect sensitive personal data (such as health, religious beliefs, or biometric data) unless specifically required for regulatory compliance and with your explicit consent.</p>
-
-                <h2 id="how-collected">3. How Data Is Collected</h2>
-
-                <p>We collect your data through:</p>
-
-                <p><strong>Direct interactions</strong> — when you fill in forms, correspond with us by email, book a demo, or apply for services.</p>
-
-                <p><strong>Automated technologies</strong> — as you interact with our website, we may automatically collect Technical Data using cookies and similar tracking technologies. See our <a href="/cookie-policy">Cookie Policy</a> for details.</p>
-
-                <p><strong>Third parties</strong> — we may receive data from identity verification providers, sanctions screening databases, credit reference agencies, payment processors, and public registers in connection with our regulatory compliance obligations.</p>
-
-                <h2 id="how-we-use">4. How We Use Your Data</h2>
-
-                <p>We will only use your personal data when the law allows us to. Most commonly, we use it:</p>
-
-                <p><strong>To provide our services</strong> — processing payments, managing accounts, executing transfers, and facilitating digital asset transactions.</p>
-
-                <p><strong>For regulatory compliance</strong> — fulfilling our obligations under FINTRAC, AUSTRAC, and applicable AML/CTF regulations, including identity verification, transaction monitoring, and suspicious activity reporting.</p>
-
-                <p><strong>For legitimate business interests</strong> — improving our website and services, analysing usage, detecting fraud, and ensuring network and information security.</p>
-
-                <p><strong>With your consent</strong> — sending marketing communications where you have opted in. You may withdraw consent at any time by contacting us at <a href="mailto:support@ibnk.xyz">support@ibnk.xyz</a>.</p>
-
-                <p><strong>To perform a contract</strong> — where processing is necessary to fulfil obligations under our Terms and Conditions.</p>
-
-                <h2 id="sharing">5. Sharing Your Data</h2>
-
-                <p>We may share your personal data with:</p>
-
-                <p><strong>Service providers</strong> — third-party vendors who perform services on our behalf, such as cloud infrastructure providers, identity verification services, payment processors, and compliance screening providers. These parties are bound by data processing agreements and may not use your data for their own purposes.</p>
-
-                <p><strong>Regulatory and law enforcement authorities</strong> — FINTRAC, AUSTRAC, and other competent authorities where we are legally obliged to disclose information, including for AML/CTF reporting purposes.</p>
-
-                <p><strong>Banking and financial partners</strong> — correspondent banks, digital asset exchanges, and liquidity providers involved in processing your transactions.</p>
-
-                <p><strong>Professional advisers</strong> — lawyers, auditors, and insurers, under duties of confidentiality.</p>
-
-                <p>We do not sell your personal data to third parties.</p>
-
-                <h2 id="international">6. International Transfers</h2>
-
-                <p>iBnk operates across multiple jurisdictions. Your data may be transferred to, and processed in, countries outside your country of residence, including Canada and Australia. Where such transfers occur, we implement appropriate safeguards in accordance with applicable data protection laws, which may include standard contractual clauses or reliance on adequacy decisions.</p>
-
-                <p>If you would like further information about the specific mechanisms used when transferring your personal data internationally, please contact us at <a href="mailto:support@ibnk.xyz">support@ibnk.xyz</a>.</p>
-
-                <h2 id="security">7. Data Security</h2>
-
-                <p>We have implemented appropriate technical and organisational security measures to protect your personal data against accidental loss, unauthorised access, alteration, or disclosure. These include encryption in transit and at rest, access controls, and regular security reviews.</p>
-
-                <p>However, no method of transmission over the internet or method of electronic storage is 100% secure. While we strive to protect your personal data, we cannot guarantee absolute security. You are responsible for keeping your account credentials confidential.</p>
-
-                <h2 id="retention">8. Data Retention</h2>
-
-                <p>We retain your personal data only for as long as necessary to fulfil the purposes we collected it for, including satisfying any legal, regulatory, accounting, or reporting requirements.</p>
-
-                <p>Under Canadian and Australian AML regulations, we are required to retain transaction records and customer identification information for a minimum of five (5) years from the date of the transaction or the end of the business relationship. In practice, we may retain certain data for longer periods where required by applicable law or where necessary to establish, exercise, or defend legal claims.</p>
-
-                <h2 id="your-rights">9. Your Rights</h2>
-
-                <p>Depending on your jurisdiction, you may have the following rights regarding your personal data:</p>
-
-                <p><strong>Access</strong> — the right to request a copy of the personal data we hold about you.</p>
-
-                <p><strong>Correction</strong> — the right to request that we correct inaccurate or incomplete data.</p>
-
-                <p><strong>Erasure</strong> — the right to request deletion of your personal data, subject to applicable legal and regulatory obligations.</p>
-
-                <p><strong>Restriction</strong> — the right to request that we limit the processing of your data in certain circumstances.</p>
-
-                <p><strong>Portability</strong> — the right to receive your data in a structured, commonly used, machine-readable format.</p>
-
-                <p><strong>Objection</strong> — the right to object to processing based on legitimate interests or for direct marketing purposes.</p>
-
-                <p><strong>Withdraw consent</strong> — where we rely on consent as the legal basis for processing, you may withdraw it at any time.</p>
-
-                <p>To exercise any of these rights, please contact us at <a href="mailto:support@ibnk.xyz">support@ibnk.xyz</a>. We will respond to requests within the timeframe required by applicable law. Please note that some rights may be limited where we have overriding legal obligations, particularly our AML/CTF compliance duties.</p>
-
-                <h2 id="cookies">10. Cookies</h2>
-
-                <p>Our website uses cookies and similar tracking technologies. For full details of the cookies we use, why we use them, and how you can control them, please see our <a href="/cookie-policy">Cookie Policy</a>.</p>
-
-                <h2 id="contact">11. Contact Us</h2>
-
-                <p>If you have any questions, concerns, or complaints about this Privacy Policy or our data practices, please contact us:</p>
-
-                <p><strong>Email:</strong> <a href="mailto:support@ibnk.xyz">support@ibnk.xyz</a><br />
-                <strong>Postal address:</strong> IBNK VAULT INC., 6060 Silver Drive, Suite 300, Burnaby, BC V5H 0H5, Canada</p>
-
-                <p>If you are not satisfied with our response, you may have the right to lodge a complaint with the relevant supervisory authority in your jurisdiction. In Canada, this is the Office of the Privacy Commissioner of Canada. In Australia, this is the Office of the Australian Information Commissioner.</p>
-
-                <p>We may update this Privacy Policy from time to time. Any changes will be published on this page with an updated effective date. We encourage you to review this policy periodically.</p>
-
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
-    </>
+    <main
+      style={{
+        maxWidth: 760,
+        margin: '0 auto',
+        padding: 'clamp(96px, 12vw, 160px) clamp(20px, 5vw, 40px) clamp(64px, 8vw, 120px)',
+        color: '#1a1a1a',
+      }}
+    >
+      <h1 style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 500, lineHeight: 1.1, margin: 0 }}>
+        Privacy Policy
+      </h1>
+      <p style={{ fontSize: 13, opacity: 0.55, marginTop: 10 }}>Effective date: April 26, 2026</p>
+
+      <div style={{ marginTop: 40, fontSize: 15.5, lineHeight: 1.75, opacity: 0.85 }}>
+        <p>
+          This Privacy Policy explains what information <strong>iBnk</strong> (collectively, &ldquo;we,&rdquo; &ldquo;our,&rdquo;
+          or &ldquo;us&rdquo;) collects, how we use it, and the choices you have regarding your personal
+          information. iBnk is a global brand under which a group of licensed affiliated entities operates
+          regulated payments services across <strong>Canada</strong>, <strong>Australia</strong>, and the{' '}
+          <strong>United States</strong>. The iBnk affiliate that provides services to you in your region
+          acts as the data controller of your personal information. By accessing the iBnk website or using
+          any iBnk services, you consent to the practices described below. We may amend this policy from time
+          to time, and any updates will be posted to this page with a new effective date.
+        </p>
+
+        <Heading>Information We Collect</Heading>
+
+        <SubHeading>Personal information you provide</SubHeading>
+        <p>
+          When you create an account or apply for our services, we collect identifying details including your
+          name, email address, phone number, date of birth, government-issued identification, and residential
+          address — as required for onboarding, verification, and ongoing compliance with KYC and AML
+          obligations.
+        </p>
+
+        <SubHeading>Business information</SubHeading>
+        <p>
+          For business users, we collect company name, registered address, incorporation documents,
+          jurisdiction, tax identification numbers, business registration numbers, ultimate beneficial owner
+          information, and any wallet addresses or bank account details associated with the entity.
+        </p>
+
+        <SubHeading>Automatically collected information</SubHeading>
+        <p>
+          When you visit our site or use our services, we automatically capture browser type, device and
+          operating system information, IP address, approximate location, wallet addresses you connect, on-chain
+          transaction data, and interaction metrics such as page views and clicks via analytics tools.
+        </p>
+
+        <SubHeading>Transactional data</SubHeading>
+        <p>
+          We process transaction amounts, types, dates, times, originating and destination wallet addresses,
+          on-chain records, counterparty and merchant information, bank account details used for fiat on/off-ramp,
+          and payment histories.
+        </p>
+
+        <SubHeading>Cookies and similar technologies</SubHeading>
+        <p>
+          We use session cookies to keep you signed in, preference cookies to remember your settings, and
+          security cookies to detect and prevent fraud. You can configure your browser to refuse cookies, but
+          some parts of the site may not function as intended.
+        </p>
+
+        <SubHeading>Information from third parties</SubHeading>
+        <p>
+          We may supplement what you provide with data from credit bureaus, identity verification and fraud
+          detection services, sanctions and PEP screening vendors, blockchain analytics providers, and our
+          banking and payment partners — to the extent permitted by applicable law.
+        </p>
+
+        <Heading>How We Use Information</Heading>
+        <p>
+          We use the information we collect to: assess your eligibility for our services; create and maintain
+          your account; process and settle transactions; provide customer support; improve and develop the
+          iBnk product; send service-related communications and, where you have consented, marketing
+          communications; comply with our legal and regulatory obligations including KYC, AML, sanctions, and
+          Travel Rule requirements; detect, investigate, and prevent fraudulent or unauthorised activity; and
+          enforce our Terms of Use.
+        </p>
+
+        <Heading>Sharing Information</Heading>
+        <p>
+          We share personal information with: service providers who help us operate the platform (cloud
+          hosting, analytics, customer support tools, communications); banking, custody, and card-issuing
+          partners; KYC, AML, and sanctions verification providers; blockchain networks and on-chain analytics
+          partners; affiliates within the iBnk corporate group; regulators, law enforcement, courts, and other
+          government authorities where legally required; and counterparties to a corporate transaction such as
+          a merger, acquisition, or financing.
+        </p>
+
+        <Heading>Aggregated or De-identified Information</Heading>
+        <p>
+          We may share aggregated or de-identified information that cannot reasonably be linked to an
+          identifiable individual without restriction.
+        </p>
+
+        <Heading>Safeguarding Information</Heading>
+        <p>
+          We maintain administrative, technical, and physical safeguards designed to protect personal
+          information. No method of transmission or storage, however, is fully secure. You are responsible for
+          keeping your account credentials confidential and must notify us immediately at
+          {' '}<a href="mailto:support@ibnk.xyz" style={{ color: '#f73b20', textDecoration: 'underline' }}>support@ibnk.xyz</a>
+          {' '}if you suspect any unauthorised access.
+        </p>
+
+        <Heading>Retention</Heading>
+        <p>
+          We retain personal information for as long as necessary to provide our services, fulfil the purposes
+          described in this policy, resolve disputes, enforce our agreements, and comply with our legal,
+          accounting, and regulatory obligations — including the customer-due-diligence and transaction-record
+          retention requirements imposed on us under FINTRAC (Canada), AUSTRAC (Australia), and FinCEN
+          (United States), which generally require records to be kept for at least five to seven years
+          following the end of the customer relationship.
+        </p>
+
+        <Heading>Children</Heading>
+        <p>
+          Our services are not directed to anyone under 18 years of age, and we do not knowingly collect
+          personal information from children. If you believe a child has provided information to us, please
+          contact us and we will delete it.
+        </p>
+
+        <Heading>Your Account and Choices</Heading>
+        <p>
+          You can access, update, or request deletion of your account information by contacting
+          {' '}<a href="mailto:support@ibnk.xyz" style={{ color: '#f73b20', textDecoration: 'underline' }}>support@ibnk.xyz</a>.
+          {' '}We will retain information that we are legally required to keep, that is necessary for fraud
+          prevention, or that relates to ongoing disputes. On-chain transactions written to a public blockchain
+          are permanently recorded by the network and cannot be deleted by us.
+        </p>
+
+        <Heading>Regional Operations</Heading>
+        <p>
+          iBnk services are operated by a group of licensed affiliated entities under the iBnk global brand,
+          including IBNK VAULT INC. in Canada and corresponding entities in Australia and the United States.
+          No single entity controls the others; each is the responsible party for the region in which it is
+          licensed. Where a regional affiliate is the operating entity for a service you use, it acts as the
+          data controller under this same policy. Region-specific registration details are available on
+          request.
+        </p>
+
+        <Heading>International Data Transfers</Heading>
+        <p>
+          iBnk operates across Canada, Australia, and the United States, and works with service providers in
+          additional jurisdictions. Your information may therefore be transferred to and processed in
+          countries other than your own. Where required, we put appropriate safeguards in place — including
+          standard contractual clauses or equivalent measures — to protect your information consistent with
+          applicable law.
+        </p>
+
+        <Heading>Do Not Track</Heading>
+        <p>
+          Our site does not currently respond to Do Not Track signals from web browsers.
+        </p>
+
+        <Heading>Your Rights — Canada (PIPEDA)</Heading>
+        <p>
+          If you are located in Canada, you have the right to access the personal information we hold about
+          you, request that we correct inaccuracies, and withdraw consent (subject to legal or contractual
+          restrictions). Complaints can be directed to the Office of the Privacy Commissioner of Canada at
+          {' '}<a href="https://www.priv.gc.ca" target="_blank" rel="noopener noreferrer" style={{ color: '#f73b20', textDecoration: 'underline' }}>priv.gc.ca</a>.
+        </p>
+
+        <Heading>Your Rights — Australia (Privacy Act 1988)</Heading>
+        <p>
+          If you are located in Australia, you have rights under the Privacy Act 1988 (Cth) and the Australian
+          Privacy Principles, including the right to access and correct your personal information, request a
+          complaint review, and ask how your information has been used or disclosed. Complaints regarding our
+          handling of your information can be directed to the Office of the Australian Information
+          Commissioner at
+          {' '}<a href="https://www.oaic.gov.au" target="_blank" rel="noopener noreferrer" style={{ color: '#f73b20', textDecoration: 'underline' }}>oaic.gov.au</a>.
+        </p>
+
+        <Heading>Your Rights — United States</Heading>
+        <p>
+          Residents of US states with applicable privacy laws — including California (CCPA / CPRA), Virginia,
+          Colorado, Connecticut, and Utah — may have rights to know, access, correct, delete, and request
+          portability of their personal information, as well as to opt out of certain &ldquo;sales&rdquo; or
+          &ldquo;sharing&rdquo; of personal information. iBnk does not sell personal information. To exercise these
+          rights, contact us at{' '}
+          <a href="mailto:support@ibnk.xyz" style={{ color: '#f73b20', textDecoration: 'underline' }}>support@ibnk.xyz</a>.
+          Anti-money-laundering record-keeping obligations under the US Bank Secrecy Act may limit deletion
+          requests.
+        </p>
+
+        <Heading>Your Rights — EU/UK (GDPR)</Heading>
+        <p>If you are located in the European Economic Area or the United Kingdom, you have the right to:</p>
+        <ul style={{ paddingLeft: 22, marginTop: 12 }}>
+          <li style={{ marginBottom: 6 }}>access the personal data we hold about you;</li>
+          <li style={{ marginBottom: 6 }}>request correction of inaccurate or incomplete data;</li>
+          <li style={{ marginBottom: 6 }}>request deletion of your personal data, subject to our legal obligations;</li>
+          <li style={{ marginBottom: 6 }}>restrict or object to certain processing;</li>
+          <li style={{ marginBottom: 6 }}>data portability;</li>
+          <li style={{ marginBottom: 6 }}>withdraw consent at any time, where processing is based on consent.</li>
+        </ul>
+        <p style={{ marginTop: 14 }}>
+          Our legal bases for processing include performance of a contract, compliance with legal obligations,
+          legitimate interests in operating and securing our services, and your consent where applicable.
+          Complaints can be lodged with your local data protection authority — for the UK, the Information
+          Commissioner&apos;s Office at
+          {' '}<a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" style={{ color: '#f73b20', textDecoration: 'underline' }}>ico.org.uk</a>.
+        </p>
+
+        <Heading>Contact Us</Heading>
+        <p>
+          For privacy questions, data subject requests, or complaints, contact us at:
+        </p>
+        <p style={{ marginTop: 14 }}>
+          <strong>Email:</strong>{' '}
+          <a href="mailto:support@ibnk.xyz" style={{ color: '#f73b20', textDecoration: 'underline' }}>support@ibnk.xyz</a>
+        </p>
+        <p style={{ marginTop: 14 }}>
+          <strong>Canadian affiliate</strong> &mdash; IBNK VAULT INC.
+          <br />
+          Incorporation No. BC1571168 &middot; FINTRAC MSB N3000001312
+          <br />
+          Registered office: 200&ndash;7404 King George Boulevard, Surrey, BC V3W 1N6, Canada
+        </p>
+        <p style={{ marginTop: 14, fontSize: 14, opacity: 0.7 }}>
+          iBnk also operates through licensed affiliated entities in Australia and the United States. These
+          entities operate independently in their respective jurisdictions under the iBnk global brand.
+          Region-specific registration details are available on request.
+        </p>
+      </div>
+    </main>
+  );
+}
+
+function Heading({ children }) {
+  return (
+    <h2 style={{ fontSize: 'clamp(18px, 2vw, 22px)', fontWeight: 600, marginTop: 36, marginBottom: 12, color: '#1a1a1a', opacity: 1 }}>
+      {children}
+    </h2>
+  );
+}
+
+function SubHeading({ children }) {
+  return (
+    <h3 style={{ fontSize: 15, fontWeight: 600, marginTop: 20, marginBottom: 6, color: '#1a1a1a', opacity: 1 }}>
+      {children}
+    </h3>
   );
 }

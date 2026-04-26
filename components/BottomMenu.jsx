@@ -3,10 +3,12 @@
 import { useState, useEffect, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import SupportChat from './SupportChat';
 
 export default function BottomMenu() {
   const pathname = usePathname();
   const [expandedMenu, setExpandedMenu] = useState(null);
+  const [chatOpen, setChatOpen] = useState(false);
 
   const toggleMenu = useCallback((menuName) => {
     setExpandedMenu((prev) => (prev === menuName ? null : menuName));
@@ -25,8 +27,8 @@ export default function BottomMenu() {
 
   return (
     <>
-      {/* Bottom Floating Menu */}
-      <nav className="_menu" data-variant="drawers">
+      {/* Bottom Floating Menu — hidden for now */}
+      <nav className="_menu" data-variant="drawers" style={{ display: 'none' }}>
         <ul className="menu-bar gap-2">
           {/* Home */}
           <li>
@@ -59,9 +61,9 @@ export default function BottomMenu() {
             </button>
             <div className="_menu-drawer">
               <div className="slot">
-                <Link href="/cross-border-payments" className="link"><span className="dot"></span><span>Cross-Border Payments</span></Link>
-                <Link href="/jeton-card" className="link"><span className="dot"></span><span>iBnk Card</span></Link>
-                <Link href="/fees" className="link"><span className="dot"></span><span>Fees</span></Link>
+                <a href="#cross-border" className="link"><span className="dot"></span><span>Cross-Border Payments</span></a>
+                <a href="mailto:support@ibnk.xyz?subject=iBnk%20Card" className="link"><span className="dot"></span><span>iBnk Card</span></a>
+                <a href="mailto:support@ibnk.xyz?subject=Fees" className="link"><span className="dot"></span><span>Fees</span></a>
               </div>
             </div>
           </li>
@@ -84,8 +86,8 @@ export default function BottomMenu() {
             </button>
             <div className="_menu-drawer">
               <div className="slot">
-                <Link href="/embedded-finance" className="link"><span className="dot"></span><span>Embedded Finance</span></Link>
-                <Link href="/agentic-payments" className="link"><span className="dot"></span><span>Agentic Payments</span></Link>
+                <a href="mailto:support@ibnk.xyz?subject=Embedded%20Finance" className="link"><span className="dot"></span><span>Embedded Finance</span></a>
+                <a href="#agentic" className="link"><span className="dot"></span><span>Agentic Payments</span></a>
               </div>
             </div>
           </li>
@@ -108,7 +110,7 @@ export default function BottomMenu() {
             </button>
             <div className="_menu-drawer">
               <div className="slot">
-                <Link href="/about" className="link"><span className="dot"></span><span>About</span></Link>
+                <a href="mailto:support@ibnk.xyz?subject=About%20iBnk" className="link"><span className="dot"></span><span>About</span></a>
               </div>
             </div>
           </li>
@@ -116,12 +118,18 @@ export default function BottomMenu() {
       </nav>
 
       {/* Support Button */}
-      <button className="_support-btn" aria-label="Support">
+      <button
+        className="_support-btn"
+        aria-label="Support"
+        onClick={() => setChatOpen((v) => !v)}
+      >
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path d="M21 11.5C21.0034 12.8199 20.6951 14.1219 20.1 15.3C19.3944 16.7118 18.3098 17.8992 16.9674 18.7293C15.6251 19.5594 14.0782 19.9994 12.5 20C11.1801 20.0035 9.87812 19.6951 8.7 19.1L3 21L4.9 15.3C4.30493 14.1219 3.99656 12.8199 4 11.5C4.00061 9.92179 4.44061 8.37488 5.27072 7.03258C6.10083 5.69028 7.28825 4.6056 8.7 3.90003C9.87812 3.30496 11.1801 2.99659 12.5 3.00003H13C15.0843 3.11502 17.053 3.99479 18.5291 5.47089C20.0052 6.94699 20.885 8.91568 21 11V11.5Z" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
         <span>Support</span>
       </button>
+
+      <SupportChat open={chatOpen} onClose={() => setChatOpen(false)} />
     </>
   );
 }

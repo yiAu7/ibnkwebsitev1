@@ -5,6 +5,7 @@ import CtaMillion from '@/components/CtaMillion'
 import dynamic from 'next/dynamic'
 const Ballpit = dynamic(() => import('@/components/Ballpit'), { ssr: false })
 const GridMotion = dynamic(() => import('@/components/GridMotion'), { ssr: false })
+const Orb = dynamic(() => import('@/components/Orb'), { ssr: false })
 
 // 28 identical Unsplash tiles for the GridMotion background in the product section
 const GRIDMOTION_IMAGES = Array.from({ length: 28 }, () =>
@@ -430,42 +431,54 @@ export default function HomePage() {
       {/* ===== HERO SECTION ===== */}
       <header className="_common-header" data-layout="full">
         <div className="background absolute inset-0 overflow-hidden" style={{ backgroundColor: '#000' }}>
-          <iframe
-            src="https://my.spline.design/retrofuturismbganimation-RelzdTBNbC1HmL2e1Hfy506Y/"
-            title="Hero background"
-            loading="lazy"
-            allow="autoplay; fullscreen"
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: '100%',
-              height: '100%',
-              border: 0,
-              pointerEvents: 'none',
-            }}
-          />
-          {/* Cover Spline watermark (bottom-right) — feathered so it blends regardless of bg */}
-          <div
-            aria-hidden="true"
-            style={{
-              position: 'absolute',
-              right: 0,
-              bottom: 0,
-              width: 260,
-              height: 110,
-              background: 'radial-gradient(ellipse at 80% 80%, #000 0%, #000 38%, rgba(0,0,0,0) 78%)',
-              pointerEvents: 'none',
-            }}
+          <Orb
+            hoverIntensity={2}
+            rotateOnHover
+            hue={0}
+            forceHoverState={false}
+            backgroundColor="#000000"
           />
         </div>
 
-        <div className="g-row main-row color-white relative">
+        <div className="g-row main-row color-white relative" style={{ pointerEvents: 'none' }}>
           <div className="g-col xxl-9 md-10 sm-14 xs-16 hero-heading-col">
             <h1 className="title-2 -medium">{t('hero.title.prefix')}<br /><span className="rotating-words" aria-live="polite">
                 <span className="rotating-word">{t('hero.rotate.1')}</span>
                 <span className="rotating-word">{t('hero.rotate.2')}</span>
                 <span className="rotating-word">{t('hero.rotate.3')}</span>
               </span></h1>
+
+            <div
+              style={{
+                marginTop: 'clamp(28px, 3vw, 48px)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 18,
+                width: 'fit-content',
+                pointerEvents: 'auto',
+              }}
+            >
+              <span style={{
+                fontSize: 16,
+                color: 'rgba(255,255,255,0.65)',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                fontWeight: 500,
+              }}>
+                Backed by
+              </span>
+              <img
+                src="/images/startmate-logo.png"
+                alt="Startmate"
+                style={{
+                  height: 36,
+                  width: 'auto',
+                  display: 'block',
+                  filter: 'brightness(0) invert(1)',
+                  opacity: 0.95,
+                }}
+              />
+            </div>
           </div>
 
         </div>
@@ -864,7 +877,7 @@ export default function HomePage() {
                 <li>Voice-Driven Transfers to your friends</li>
                 <li>Optimized FX Conversions</li>
               </ul>
-              <a href="mailto:support@ibnk.xyz" className="product-card__cta">Open an account <span aria-hidden="true">→</span></a>
+              <a href="/signup" className="product-card__cta">Open an account <span aria-hidden="true">→</span></a>
             </article>
           </div>
 
@@ -883,7 +896,7 @@ export default function HomePage() {
                 <li>Programmable On/Off-Ramps</li>
                 <li>T+0 Cross-Rail Settlement</li>
               </ul>
-              <a href="https://cal.com/yi-zhang-avxwyp/15min" target="_blank" rel="noreferrer" className="product-card__cta">Open an account <span aria-hidden="true">→</span></a>
+              <a href="/signup" className="product-card__cta">Open an account <span aria-hidden="true">→</span></a>
             </article>
           </div>
 
@@ -895,15 +908,9 @@ export default function HomePage() {
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="3" stroke="currentColor" strokeWidth="1.8" /><circle cx="9" cy="12" r="1.2" fill="currentColor" /><circle cx="15" cy="12" r="1.2" fill="currentColor" /><path d="M12 2v4M8 18l-1 3M16 18l1 3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
               </div>
               <span className="product-card__eyebrow">For Your Agent</span>
-              <h3 className="product-card__title">Payments for agents.</h3>
-              <p className="product-card__body">Give autonomous agents their own rails. Initiate, route, and settle — with full attribution and audit.</p>
-              <ul className="product-card__list">
-                <li>Agent-initiated payments</li>
-                <li>Autonomous multi-rail routing</li>
-                <li>Per-agent attribution trail</li>
-                <li>Full compliance traceability</li>
-              </ul>
-              <a href="mailto:support@ibnk.xyz" className="product-card__cta">Read the docs <span aria-hidden="true">→</span></a>
+              <h3 className="product-card__title">One account. Now agent-accessible.</h3>
+              <p className="product-card__body">Give your AI agent its own scoped key into your iBnk account — with the spending limits and audit trail you set. Same wallet, same rails, programmatic access.</p>
+              <a href="https://cal.com/yi-zhang-avxwyp/15min" target="_blank" rel="noreferrer" className="product-card__cta">Talk to us <span aria-hidden="true">→</span></a>
             </article>
           </div>
         </div>
@@ -932,54 +939,71 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== CLIENT TESTIMONIALS ===== */}
+      {/* ===== EARLY CIRCLE — invite-only ===== */}
       <section className="_client-testimonials relative" ref={testimonialsRef}>
         <div className="background absolute inset-0">
-          <img src="/images/testimonials-bg.webp" width="4000" height="2667" alt="Hear it from our clients" className="absolute inset-0 object-cover" />
+          <img src="/images/testimonials-bg.jpg" width="4000" height="2667" alt="Our Early Circle" className="absolute inset-0 object-cover" />
         </div>
 
-        <div className="g-row justify-center text-center">
-          <h2 className="g-col xxl-10 md-12 xs-16 title-3 -medium testimonials-title color-white">Hear it from our clients</h2>
+        <div className="g-row justify-center text-center color-white">
+          <div className="g-col xxl-12 md-14 xs-16 testimonials-title">
+            <h2 className="title-3 -medium" style={{ margin: 0 }}>
+              Our Early Circle
+            </h2>
+            <p
+              className="subhead-1 -medium"
+              style={{
+                opacity: 0.85,
+                marginTop: 'clamp(16px, 1.5vw, 24px)',
+                lineHeight: 1.3,
+                maxWidth: '720px',
+                marginLeft: 'auto',
+                marginRight: 'auto',
+              }}
+            >
+              iBnk is invite-only during beta. Every member is here because someone vouched for them.
+            </p>
+          </div>
         </div>
 
         <ul className="testimonial-cards relative">
           <li>
             <div className="testimonial-card">
-              <p className="-medium">Recommended</p>
-              <p className="opacity-70">Very happy with the app. Does what it says, simple payments and transactions. Quick account verification and withdrawals. 24/7 support available.</p>
+              <p className="-medium">Got pulled in by a friend</p>
+              <p className="opacity-70">Was on the waitlist for weeks. Finally got the code from someone in the early cohort. Already moved my payroll over.</p>
               <div className="flex gap-8 items-center mt-16">
                 <span className="_avatar inline-flex place-center" style={{ '--color': '#360802', '--background-color': '#BCFFBB' }}>VK</span>
-                <span>Vamsi K.</span>
+                <span>Vamsi K. · Founder</span>
               </div>
             </div>
           </li>
           <li>
             <div className="testimonial-card">
-              <p className="-medium">Awesome app very user friendly</p>
-              <p className="opacity-70">Would highly recommend iBnk to my friends.</p>
+              <p className="-medium">Quietly the best thing in my stack</p>
+              <p className="opacity-70">A friend slipped me a code with a &ldquo;don&apos;t share it widely yet&rdquo; note. Now I get why.</p>
               <div className="flex gap-8 items-center mt-16">
                 <span className="_avatar inline-flex place-center" style={{ '--color': '#360802', '--background-color': '#BBD2FF' }}>LA</span>
-                <span>Leonie A.</span>
+                <span>Leonie A. · Operator</span>
               </div>
             </div>
           </li>
           <li>
             <div className="testimonial-card">
-              <p className="-medium">The best payment solution</p>
-              <p className="opacity-70">I{"'"}ve been an iBnk user for a few years! The support was always great and I{"'"}m always able to make my payments with no problem.</p>
+              <p className="-medium">Three contractors asked me for an invite</p>
+              <p className="opacity-70">I only have two codes left. People are starting to figure out what this is.</p>
               <div className="flex gap-8 items-center mt-16">
                 <span className="_avatar inline-flex place-center" style={{ '--color': '#360802', '--background-color': '#F5FFBB' }}>KR</span>
-                <span>Karl R.</span>
+                <span>Karl R. · Independent</span>
               </div>
             </div>
           </li>
           <li>
             <div className="testimonial-card">
-              <p className="-medium">Easy and Fast</p>
-              <p className="opacity-70">Great platform for fast and easy transfers. I have been using iBnk for a while now without any problem.</p>
+              <p className="-medium">Worth the wait</p>
+              <p className="opacity-70">Two months on the waitlist, one referral, and suddenly cross-border just works. I get why they&apos;re gating it.</p>
               <div className="flex gap-8 items-center mt-16">
                 <span className="_avatar inline-flex place-center" style={{ '--color': '#360802', '--background-color': '#FFBBF0' }}>DP</span>
-                <span>Dennis P.</span>
+                <span>Dennis P. · CFO</span>
               </div>
             </div>
           </li>

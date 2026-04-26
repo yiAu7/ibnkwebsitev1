@@ -4,7 +4,7 @@ import { createContext, useContext, useEffect, useState, useCallback } from 'rea
 
 const dict = {
   en: {
-    'nav.signup': 'Sign Up',
+    'nav.signup': 'Join Whitelist',
 
     'hero.title.prefix': 'Borderless money movement —',
     'hero.rotate.1': 'faster.',
@@ -44,7 +44,7 @@ const dict = {
     'signup.waitlist': 'No invite code? Join the waitlist',
   },
   zh: {
-    'nav.signup': '注册',
+    'nav.signup': '加入白名单',
 
     'hero.title.prefix': '跨境资金流动——',
     'hero.rotate.1': '更快。',

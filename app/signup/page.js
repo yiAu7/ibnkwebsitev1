@@ -2,17 +2,20 @@
 
 import { useState } from 'react';
 import { useI18n } from '@/lib/i18n';
+import WhitelistModal from '@/components/WhitelistModal';
 
 export default function SignupPage() {
   const { t } = useI18n();
   const [code, setCode] = useState('');
-  const [status, setStatus] = useState(null);
+  const [status, setStatus] = useState('idle'); // idle | checking | invalid
+  const [whitelistOpen, setWhitelistOpen] = useState(false);
 
   function onSubmit(e) {
     e.preventDefault();
     if (!code.trim()) return;
     setStatus('checking');
-    setTimeout(() => setStatus('invalid'), 600);
+    // No backend yet — every code is treated as invalid for now
+    setTimeout(() => setStatus('invalid'), 700);
   }
 
   return (
@@ -22,93 +25,130 @@ export default function SignupPage() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '120px 24px 64px',
-        background: '#f73b20',
-        color: '#fff',
+        padding: 'clamp(96px, 12vw, 160px) clamp(20px, 5vw, 40px) clamp(64px, 8vw, 120px)',
+        background: '#fafafa',
       }}
     >
       <div
         style={{
           width: '100%',
-          maxWidth: 480,
-          background: 'rgba(255,255,255,0.06)',
-          border: '1px solid rgba(255,255,255,0.16)',
-          borderRadius: 24,
-          padding: '48px 40px',
-          backdropFilter: 'blur(8px)',
-          WebkitBackdropFilter: 'blur(8px)',
+          maxWidth: 460,
+          background: '#fff',
+          borderRadius: 22,
+          padding: 'clamp(28px, 4vw, 44px)',
+          boxShadow: '0 20px 60px rgba(0,0,0,0.06)',
+          color: '#1a1a1a',
         }}
       >
-        <h1 className="title-4 -medium" style={{ marginBottom: 12 }}>{t('signup.title')}</h1>
-        <p className="body -book" style={{ opacity: 0.8, marginBottom: 32 }}>{t('signup.desc')}</p>
+        <img
+          src="/images/ibnk-logo-white.svg"
+          alt="iBnk"
+          style={{
+            height: 32,
+            width: 'auto',
+            display: 'block',
+            filter: 'invert(1)',
+            marginBottom: 24,
+          }}
+        />
 
-        <form onSubmit={onSubmit} noValidate>
-          <label
-            htmlFor="invite-code"
-            className="caption -medium uppercase"
-            style={{ display: 'block', letterSpacing: '0.1em', opacity: 0.7, marginBottom: 8 }}
-          >
+        <h1 style={{ fontSize: 'clamp(24px, 3vw, 30px)', fontWeight: 600, lineHeight: 1.2, margin: 0 }}>
+          {t('signup.title')}
+        </h1>
+        <p style={{ fontSize: 14, lineHeight: 1.6, opacity: 0.6, marginTop: 10, marginBottom: 0 }}>
+          {t('signup.desc')}
+        </p>
+
+        <form onSubmit={onSubmit} style={{ marginTop: 28 }}>
+          <label htmlFor="invite-code" style={{
+            display: 'block',
+            fontSize: 12,
+            fontWeight: 500,
+            opacity: 0.6,
+            letterSpacing: '0.04em',
+            textTransform: 'uppercase',
+            marginBottom: 8,
+          }}>
             {t('signup.label')}
           </label>
           <input
             id="invite-code"
             type="text"
             value={code}
-            onChange={(e) => { setCode(e.target.value); setStatus(null); }}
+            onChange={(e) => { setCode(e.target.value); if (status === 'invalid') setStatus('idle'); }}
             placeholder={t('signup.placeholder')}
+            disabled={status === 'checking'}
             autoComplete="off"
-            spellCheck={false}
-            required
             style={{
               width: '100%',
-              padding: '16px 18px',
+              padding: '14px 16px',
+              border: status === 'invalid' ? '1px solid #f73b20' : '1px solid rgba(0,0,0,0.12)',
               borderRadius: 12,
-              border: '1px solid rgba(255,255,255,0.25)',
-              background: 'rgba(0,0,0,0.15)',
-              color: '#fff',
-              fontSize: 16,
+              fontSize: 15,
               outline: 'none',
-              marginBottom: status === 'invalid' ? 12 : 24,
+              fontFamily: 'inherit',
+              letterSpacing: '0.06em',
+              textTransform: 'uppercase',
             }}
           />
 
           {status === 'invalid' && (
-            <p className="caption" style={{ color: '#ffd9d2', marginBottom: 16 }}>
-              Invalid invite code. Please try again.
+            <p style={{ fontSize: 13, color: '#c92510', marginTop: 8, lineHeight: 1.5 }}>
+              We couldn&apos;t recognize that code. Double-check with whoever invited you, or join the waitlist below.
             </p>
           )}
 
           <button
             type="submit"
-            disabled={status === 'checking' || !code.trim()}
+            disabled={!code.trim() || status === 'checking'}
             style={{
+              marginTop: 18,
               width: '100%',
-              padding: '16px 20px',
+              padding: '14px 18px',
               borderRadius: 999,
+              background: '#f73b20',
+              color: '#fff',
               border: 'none',
-              background: '#fff',
-              color: '#1a1a1a',
-              fontSize: 16,
-              fontWeight: 600,
-              cursor: status === 'checking' || !code.trim() ? 'not-allowed' : 'pointer',
-              opacity: !code.trim() ? 0.6 : 1,
-              transition: 'opacity 0.2s ease',
+              fontSize: 15,
+              fontWeight: 500,
+              cursor: code.trim() && status !== 'checking' ? 'pointer' : 'not-allowed',
+              opacity: code.trim() && status !== 'checking' ? 1 : 0.5,
+              fontFamily: 'inherit',
+              transition: 'opacity 0.2s, background 0.2s',
             }}
           >
             {status === 'checking' ? '…' : t('signup.verify')}
           </button>
         </form>
 
-        <div style={{ marginTop: 24, textAlign: 'center' }}>
-          <a
-            href="mailto:support@ibnk.xyz?subject=Waitlist"
-            className="body-small"
-            style={{ color: '#fff', textDecoration: 'underline', opacity: 0.85 }}
+        <div style={{
+          marginTop: 24,
+          paddingTop: 20,
+          borderTop: '1px solid rgba(0,0,0,0.08)',
+          textAlign: 'center',
+        }}>
+          <button
+            type="button"
+            onClick={() => setWhitelistOpen(true)}
+            style={{
+              background: 'none',
+              border: 'none',
+              padding: 0,
+              fontSize: 14,
+              color: '#f73b20',
+              fontWeight: 500,
+              cursor: 'pointer',
+              fontFamily: 'inherit',
+              textDecoration: 'underline',
+              textUnderlineOffset: 3,
+            }}
           >
             {t('signup.waitlist')}
-          </a>
+          </button>
         </div>
       </div>
+
+      <WhitelistModal open={whitelistOpen} onClose={() => setWhitelistOpen(false)} />
     </main>
   );
 }
