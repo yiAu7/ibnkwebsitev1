@@ -1,7 +1,6 @@
 'use client';
 
 import Image from 'next/image';
-import TextPressure from './TextPressure';
 
 export default function Footer() {
   return (
@@ -9,26 +8,6 @@ export default function Footer() {
       className="_footer g-row-full color-orange -book"
       style={{ paddingTop: 'var(--80-32)', paddingBottom: 'var(--32-16)' }}
     >
-      {/* Animated iBnk wordmark — reacts to mouse */}
-      <div
-        className="g-row-full"
-        style={{ height: 'clamp(120px, 20vw, 280px)', marginBottom: 'var(--48-24)' }}
-      >
-        <TextPressure
-          text="iBnk"
-          flex
-          width
-          weight
-          italic={false}
-          alpha={false}
-          stroke={false}
-          scale
-          textColor="#ff751f"
-          minFontSize={80}
-          textTransform="none"
-        />
-      </div>
-
       <div className="g-row-full flex flex-wrap items-center justify-between" style={{ gap: 24 }}>
         {/* Logo */}
         <Image
