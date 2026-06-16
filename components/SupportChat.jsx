@@ -69,7 +69,7 @@ export default function SupportChat({ open, onClose }) {
         const copy = msgs.slice();
         copy[copy.length - 1] = {
           role: 'assistant',
-          content: "Sorry — I'm having trouble reaching the server. Please try again, or email support@ibnk.xyz.",
+          content: "Sorry — I'm having trouble reaching the server. Please try again, or email contact@ibnk.xyz.",
         };
         return copy;
       });

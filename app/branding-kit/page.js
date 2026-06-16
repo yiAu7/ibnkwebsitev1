@@ -44,8 +44,8 @@ export default function BrandingKitPage() {
       <p style={{ fontSize: 16, lineHeight: 1.7, opacity: 0.7, marginTop: 16, maxWidth: 620 }}>
         Everything you need to represent iBnk correctly — logo, colors, and typography. Please keep our
         marks intact and follow the simple guidelines below. For anything not covered here, reach out to{' '}
-        <a href="mailto:support@ibnk.xyz" style={{ color: '#ff751f', textDecoration: 'underline' }}>
-          support@ibnk.xyz
+        <a href="mailto:contact@ibnk.xyz" style={{ color: '#ff751f', textDecoration: 'underline' }}>
+          contact@ibnk.xyz
         </a>
         .
       </p>
@@ -228,8 +228,8 @@ export default function BrandingKitPage() {
           <h2 style={{ ...sectionTitle, marginBottom: 8 }}>Press &amp; partnerships</h2>
           <p style={{ fontSize: 15, lineHeight: 1.7, opacity: 0.8, margin: 0 }}>
             Need additional assets, logos in other formats, or have a media request? Email{' '}
-            <a href="mailto:support@ibnk.xyz" style={{ color: '#ff751f', textDecoration: 'underline', fontWeight: 600 }}>
-              support@ibnk.xyz
+            <a href="mailto:contact@ibnk.xyz" style={{ color: '#ff751f', textDecoration: 'underline', fontWeight: 600 }}>
+              contact@ibnk.xyz
             </a>{' '}
             and we’ll get back to you.
           </p>

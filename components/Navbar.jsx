@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { useI18n } from '@/lib/i18n';
 
 const langBtnBase = {
@@ -15,10 +16,17 @@ const langBtnBase = {
 
 export default function Navbar() {
   const { lang, setLang, t } = useI18n();
+  const pathname = usePathname();
+  // Home has a dark hero behind the nav → white logo/text.
+  // Every other page has a light (#f8faf8) background → use the dark logo/text.
+  const isHome = pathname === '/';
 
   return (
     <>
-      <nav className="_navbar g-row items-center justify-between">
+      <nav
+        className="_navbar g-row items-center justify-between"
+        style={{ color: isHome ? undefined : '#1a1a1a' }}
+      >
         <Link href="/" className="homepage-link" aria-label="iBnk">
           <Image
             src="/images/ibnk-logo-white.svg"
@@ -26,7 +34,7 @@ export default function Navbar() {
             width={180}
             height={72}
             priority
-            style={{ height: '56px', width: 'auto', display: 'block' }}
+            style={{ height: '56px', width: 'auto', display: 'block', filter: isHome ? undefined : 'invert(1)' }}
           />
         </Link>
 
@@ -57,8 +65,8 @@ export default function Navbar() {
             href="/book-demo"
             aria-label={t('nav.bookdemo')}
             style={{
-              backgroundColor: 'rgba(255,255,255,0.1)',
-              border: '1px solid rgba(255,255,255,0.15)',
+              backgroundColor: isHome ? 'rgba(255,255,255,0.1)' : '#ff751f',
+              border: isHome ? '1px solid rgba(255,255,255,0.15)' : '1px solid #ff751f',
               backdropFilter: 'blur(20px)',
               WebkitBackdropFilter: 'blur(20px)',
               borderRadius: '5em',
@@ -76,8 +84,8 @@ export default function Navbar() {
               fontFamily: 'inherit',
               transition: 'background-color 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94)',
             }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)'; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'; }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = isHome ? 'rgba(255,255,255,0.2)' : '#ef660c'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = isHome ? 'rgba(255,255,255,0.1)' : '#ff751f'; }}
           >
             <span>{t('nav.bookdemo')}</span>
           </Link>
