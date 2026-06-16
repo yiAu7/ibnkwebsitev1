@@ -36,7 +36,7 @@ export default function TermsOfUsePage() {
         </p>
         <p style={{ marginTop: 14 }}>
           Named Virtual Accounts on the iBnk platform are provided through our partner bank,{' '}
-          <a href="https://www.sgb.com" target="_blank" rel="noopener noreferrer" style={{ color: '#f73b20', textDecoration: 'underline' }}>
+          <a href="https://www.sgb.com" target="_blank" rel="noopener noreferrer" style={{ color: '#ff751f', textDecoration: 'underline' }}>
             Singapore Gulf Bank (SGB)
           </a>. Banking, custody, and settlement are operated by iBnk in cooperation with regulated banking and
           infrastructure partners.
@@ -48,7 +48,7 @@ export default function TermsOfUsePage() {
           least 18 years old, that you are not located in a jurisdiction prohibited by applicable sanctions
           regimes, that you are not subject to government sanctions, and that you agree to be bound by these
           Terms and our{' '}
-          <a href="/privacy-policy" style={{ color: '#f73b20', textDecoration: 'underline' }}>Privacy Policy</a>. If
+          <a href="/privacy-policy" style={{ color: '#ff751f', textDecoration: 'underline' }}>Privacy Policy</a>. If
           you do not agree, you may not use the iBnk platform.
         </p>
 
@@ -58,7 +58,7 @@ export default function TermsOfUsePage() {
           identity verification (KYC) and, for businesses, business verification (KYB) checks. You are
           responsible for keeping your credentials secure, maintaining control of the email address and
           authentication methods linked to your account, and notifying us immediately at{' '}
-          <a href="mailto:support@ibnk.xyz" style={{ color: '#f73b20', textDecoration: 'underline' }}>support@ibnk.xyz</a>{' '}
+          <a href="mailto:support@ibnk.xyz" style={{ color: '#ff751f', textDecoration: 'underline' }}>support@ibnk.xyz</a>{' '}
           if you suspect any unauthorised access. We reserve the right to suspend or close any account that
           breaches these Terms or applicable law.
         </p>
@@ -145,7 +145,7 @@ export default function TermsOfUsePage() {
         <p style={{ marginTop: 14 }}>
           <strong>Informal resolution.</strong> Before initiating any formal proceedings, you agree to first
           contact us at{' '}
-          <a href="mailto:support@ibnk.xyz" style={{ color: '#f73b20', textDecoration: 'underline' }}>support@ibnk.xyz</a>{' '}
+          <a href="mailto:support@ibnk.xyz" style={{ color: '#ff751f', textDecoration: 'underline' }}>support@ibnk.xyz</a>{' '}
           and attempt in good faith to resolve the matter informally.
         </p>
         <p style={{ marginTop: 14 }}>
@@ -160,7 +160,7 @@ export default function TermsOfUsePage() {
           other intellectual property associated with the iBnk brand. You may not copy, modify, distribute, or
           create derivative works of any of the foregoing without our prior written permission.
           Copyright-infringement claims should be directed to{' '}
-          <a href="mailto:support@ibnk.xyz" style={{ color: '#f73b20', textDecoration: 'underline' }}>support@ibnk.xyz</a>{' '}
+          <a href="mailto:support@ibnk.xyz" style={{ color: '#ff751f', textDecoration: 'underline' }}>support@ibnk.xyz</a>{' '}
           with sufficient detail to allow us to investigate.
         </p>
 
@@ -188,10 +188,10 @@ export default function TermsOfUsePage() {
         <Heading number="16.">Contact</Heading>
         <p>
           <strong>Email:</strong>{' '}
-          <a href="mailto:support@ibnk.xyz" style={{ color: '#f73b20', textDecoration: 'underline' }}>support@ibnk.xyz</a>
+          <a href="mailto:support@ibnk.xyz" style={{ color: '#ff751f', textDecoration: 'underline' }}>support@ibnk.xyz</a>
           <br />
           <strong>Website:</strong>{' '}
-          <a href="https://www.ibnk.xyz" target="_blank" rel="noopener noreferrer" style={{ color: '#f73b20', textDecoration: 'underline' }}>ibnk.xyz</a>
+          <a href="https://www.ibnk.xyz" target="_blank" rel="noopener noreferrer" style={{ color: '#ff751f', textDecoration: 'underline' }}>ibnk.xyz</a>
         </p>
         <p style={{ marginTop: 14 }}>
           <strong>Canadian affiliate</strong> &mdash; IBNK VAULT INC.

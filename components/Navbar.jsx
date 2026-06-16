@@ -2,9 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
 import { useI18n } from '@/lib/i18n';
-import WhitelistModal from './WhitelistModal';
 
 const langBtnBase = {
   background: 'transparent',
@@ -17,7 +15,6 @@ const langBtnBase = {
 
 export default function Navbar() {
   const { lang, setLang, t } = useI18n();
-  const [whitelistOpen, setWhitelistOpen] = useState(false);
 
   return (
     <>
@@ -56,10 +53,9 @@ export default function Navbar() {
             </button>
           </div>
 
-          <button
-            type="button"
-            onClick={() => setWhitelistOpen(true)}
-            aria-label={t('nav.signup')}
+          <Link
+            href="/book-demo"
+            aria-label={t('nav.bookdemo')}
             style={{
               backgroundColor: 'rgba(255,255,255,0.1)',
               border: '1px solid rgba(255,255,255,0.15)',
@@ -67,6 +63,7 @@ export default function Navbar() {
               WebkitBackdropFilter: 'blur(20px)',
               borderRadius: '5em',
               color: '#fff',
+              textDecoration: 'none',
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.5em',
@@ -82,15 +79,10 @@ export default function Navbar() {
             onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.2)'; }}
             onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.1)'; }}
           >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M12 3l1.9 5.9 5.9 1.9-5.9 1.9L12 18.6l-1.9-5.9L4.2 10.8l5.9-1.9L12 3z" />
-            </svg>
-            <span>{t('nav.signup')}</span>
-          </button>
+            <span>{t('nav.bookdemo')}</span>
+          </Link>
         </div>
       </nav>
-
-      <WhitelistModal open={whitelistOpen} onClose={() => setWhitelistOpen(false)} />
     </>
   );
 }

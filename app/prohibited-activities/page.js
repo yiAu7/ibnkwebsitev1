@@ -26,8 +26,8 @@ export default function ProhibitedActivitiesPage() {
           Bank (SGB) for Named Virtual Accounts. The list below sets out the jurisdictions, business types,
           and transaction categories that are not permitted on the iBnk platform. It applies in addition to
           our{' '}
-          <a href="/terms-of-use" style={{ color: '#f73b20', textDecoration: 'underline' }}>Terms of Use</a> and{' '}
-          <a href="/privacy-policy" style={{ color: '#f73b20', textDecoration: 'underline' }}>Privacy Policy</a>,
+          <a href="/terms-of-use" style={{ color: '#ff751f', textDecoration: 'underline' }}>Terms of Use</a> and{' '}
+          <a href="/privacy-policy" style={{ color: '#ff751f', textDecoration: 'underline' }}>Privacy Policy</a>,
           and may be updated as regulatory, partner, or risk requirements change.
         </p>
 
@@ -179,7 +179,7 @@ export default function ProhibitedActivitiesPage() {
         </p>
         <p style={{ marginTop: 14 }}>
           <strong>Email:</strong>{' '}
-          <a href="mailto:support@ibnk.xyz" style={{ color: '#f73b20', textDecoration: 'underline' }}>support@ibnk.xyz</a>
+          <a href="mailto:support@ibnk.xyz" style={{ color: '#ff751f', textDecoration: 'underline' }}>support@ibnk.xyz</a>
         </p>
         <p style={{ marginTop: 14, fontSize: 14, opacity: 0.7 }}>
           iBnk services are provided by a group of licensed affiliated entities operating under the iBnk

@@ -23,7 +23,7 @@ export default function Footer() {
           alpha={false}
           stroke={false}
           scale
-          textColor="#f73b20"
+          textColor="#ff751f"
           minFontSize={80}
           textTransform="none"
         />
@@ -44,7 +44,7 @@ export default function Footer() {
           <a href="/terms-of-use" className="footer-link">Terms of Use</a>
           <a href="/privacy-policy" className="footer-link">Privacy Policy</a>
           <a href="/prohibited-activities" className="footer-link">Prohibited Activities</a>
-          <a href="https://www.ibnk.xyz/branding-kit" target="_blank" rel="noopener noreferrer" className="footer-link">Branding Kit</a>
+          <a href="/branding-kit" className="footer-link">Branding Kit</a>
           <a href="https://www.linkedin.com/company/ibnk-vault-llc/" target="_blank" rel="noopener noreferrer" className="footer-link">LinkedIn</a>
           <a href="https://x.com/ibnkvault" target="_blank" rel="noopener noreferrer" className="footer-link">X</a>
         </div>

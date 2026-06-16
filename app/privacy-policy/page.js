@@ -106,7 +106,7 @@ export default function PrivacyPolicyPage() {
           We maintain administrative, technical, and physical safeguards designed to protect personal
           information. No method of transmission or storage, however, is fully secure. You are responsible for
           keeping your account credentials confidential and must notify us immediately at
-          {' '}<a href="mailto:support@ibnk.xyz" style={{ color: '#f73b20', textDecoration: 'underline' }}>support@ibnk.xyz</a>
+          {' '}<a href="mailto:support@ibnk.xyz" style={{ color: '#ff751f', textDecoration: 'underline' }}>support@ibnk.xyz</a>
           {' '}if you suspect any unauthorised access.
         </p>
 
@@ -130,7 +130,7 @@ export default function PrivacyPolicyPage() {
         <Heading>Your Account and Choices</Heading>
         <p>
           You can access, update, or request deletion of your account information by contacting
-          {' '}<a href="mailto:support@ibnk.xyz" style={{ color: '#f73b20', textDecoration: 'underline' }}>support@ibnk.xyz</a>.
+          {' '}<a href="mailto:support@ibnk.xyz" style={{ color: '#ff751f', textDecoration: 'underline' }}>support@ibnk.xyz</a>.
           {' '}We will retain information that we are legally required to keep, that is necessary for fraud
           prevention, or that relates to ongoing disputes. On-chain transactions written to a public blockchain
           are permanently recorded by the network and cannot be deleted by us.
@@ -165,7 +165,7 @@ export default function PrivacyPolicyPage() {
           If you are located in Canada, you have the right to access the personal information we hold about
           you, request that we correct inaccuracies, and withdraw consent (subject to legal or contractual
           restrictions). Complaints can be directed to the Office of the Privacy Commissioner of Canada at
-          {' '}<a href="https://www.priv.gc.ca" target="_blank" rel="noopener noreferrer" style={{ color: '#f73b20', textDecoration: 'underline' }}>priv.gc.ca</a>.
+          {' '}<a href="https://www.priv.gc.ca" target="_blank" rel="noopener noreferrer" style={{ color: '#ff751f', textDecoration: 'underline' }}>priv.gc.ca</a>.
         </p>
 
         <Heading>Your Rights — Australia (Privacy Act 1988)</Heading>
@@ -175,7 +175,7 @@ export default function PrivacyPolicyPage() {
           complaint review, and ask how your information has been used or disclosed. Complaints regarding our
           handling of your information can be directed to the Office of the Australian Information
           Commissioner at
-          {' '}<a href="https://www.oaic.gov.au" target="_blank" rel="noopener noreferrer" style={{ color: '#f73b20', textDecoration: 'underline' }}>oaic.gov.au</a>.
+          {' '}<a href="https://www.oaic.gov.au" target="_blank" rel="noopener noreferrer" style={{ color: '#ff751f', textDecoration: 'underline' }}>oaic.gov.au</a>.
         </p>
 
         <Heading>Your Rights — United States</Heading>
@@ -185,7 +185,7 @@ export default function PrivacyPolicyPage() {
           portability of their personal information, as well as to opt out of certain &ldquo;sales&rdquo; or
           &ldquo;sharing&rdquo; of personal information. iBnk does not sell personal information. To exercise these
           rights, contact us at{' '}
-          <a href="mailto:support@ibnk.xyz" style={{ color: '#f73b20', textDecoration: 'underline' }}>support@ibnk.xyz</a>.
+          <a href="mailto:support@ibnk.xyz" style={{ color: '#ff751f', textDecoration: 'underline' }}>support@ibnk.xyz</a>.
           Anti-money-laundering record-keeping obligations under the US Bank Secrecy Act may limit deletion
           requests.
         </p>
@@ -205,7 +205,7 @@ export default function PrivacyPolicyPage() {
           legitimate interests in operating and securing our services, and your consent where applicable.
           Complaints can be lodged with your local data protection authority — for the UK, the Information
           Commissioner&apos;s Office at
-          {' '}<a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" style={{ color: '#f73b20', textDecoration: 'underline' }}>ico.org.uk</a>.
+          {' '}<a href="https://ico.org.uk" target="_blank" rel="noopener noreferrer" style={{ color: '#ff751f', textDecoration: 'underline' }}>ico.org.uk</a>.
         </p>
 
         <Heading>Contact Us</Heading>
@@ -214,7 +214,7 @@ export default function PrivacyPolicyPage() {
         </p>
         <p style={{ marginTop: 14 }}>
           <strong>Email:</strong>{' '}
-          <a href="mailto:support@ibnk.xyz" style={{ color: '#f73b20', textDecoration: 'underline' }}>support@ibnk.xyz</a>
+          <a href="mailto:support@ibnk.xyz" style={{ color: '#ff751f', textDecoration: 'underline' }}>support@ibnk.xyz</a>
         </p>
         <p style={{ marginTop: 14 }}>
           <strong>Canadian affiliate</strong> &mdash; IBNK VAULT INC.

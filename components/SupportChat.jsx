@@ -103,7 +103,7 @@ export default function SupportChat({ open, onClose }) {
           maxWidth: 'calc(100vw - 40px)',
           height: 560,
           maxHeight: 'calc(100vh - 140px)',
-          background: '#fff',
+          background: '#f8faf8',
           borderRadius: 22,
           boxShadow: '0 24px 60px rgba(0,0,0,0.22)',
           display: 'flex',
@@ -128,8 +128,8 @@ export default function SupportChat({ open, onClose }) {
               width: 36,
               height: 36,
               borderRadius: '50%',
-              background: 'radial-gradient(circle at 30% 30%, #ffaa3a 0%, #f73b20 55%, #400b03 100%)',
-              boxShadow: '0 0 16px rgba(247,59,32,0.4)',
+              background: 'radial-gradient(circle at 30% 30%, #ffaa3a 0%, #ff751f 55%, #400b03 100%)',
+              boxShadow: '0 0 16px rgba(255,117,31,0.4)',
             }}
           />
           <div style={{ flex: 1, lineHeight: 1.2 }}>
@@ -163,7 +163,7 @@ export default function SupportChat({ open, onClose }) {
             display: 'flex',
             flexDirection: 'column',
             gap: 10,
-            background: '#fafafa',
+            background: '#f8faf8',
           }}
         >
           {messages.map((m, i) => {
@@ -178,7 +178,7 @@ export default function SupportChat({ open, onClose }) {
                   maxWidth: '86%',
                   padding: '10px 14px',
                   borderRadius: 16,
-                  background: isUser ? '#f73b20' : '#fff',
+                  background: isUser ? '#ff751f' : '#f8faf8',
                   color: isUser ? '#fff' : '#1a1a1a',
                   border: isUser ? 'none' : '1px solid rgba(0,0,0,0.08)',
                   fontSize: 14,
@@ -204,7 +204,7 @@ export default function SupportChat({ open, onClose }) {
             gap: 8,
             padding: '12px 14px',
             borderTop: '1px solid rgba(0,0,0,0.08)',
-            background: '#fff',
+            background: '#f8faf8',
           }}
         >
           <input
@@ -222,7 +222,7 @@ export default function SupportChat({ open, onClose }) {
               fontSize: 14,
               outline: 'none',
               color: '#1a1a1a',
-              background: '#fff',
+              background: '#f8faf8',
             }}
           />
           <button
@@ -230,7 +230,7 @@ export default function SupportChat({ open, onClose }) {
             disabled={!input.trim() || loading}
             aria-label="Send"
             style={{
-              background: '#f73b20',
+              background: '#ff751f',
               color: '#fff',
               border: 'none',
               borderRadius: '50%',

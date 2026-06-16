@@ -29,6 +29,10 @@ export default function Ballpit({
     const container = containerRef.current
     if (!container) return
 
+    // On phones the balls cover the heading/cards, so drop 50% fewer of them.
+    const isMobile = window.matchMedia('(max-width: 720px)').matches
+    const effectiveCount = isMobile ? Math.round(count * 0.5) : count
+
     let w = container.offsetWidth
     let h = container.offsetHeight
     let cleanup = () => {}
@@ -76,7 +80,7 @@ export default function Ballpit({
       const balls = []
       const createdImgs = []
       // Poisson-ish initial drop: random x, staggered y from top so they fall in
-      for (let i = 0; i < count; i++) {
+      for (let i = 0; i < effectiveCount; i++) {
         const radius = minRadius + Math.random() * (maxRadius - minRadius)
         const img = document.createElement('img')
         img.src = `https://hatscripts.github.io/circle-flags/flags/${FLAGS[i % FLAGS.length]}.svg`

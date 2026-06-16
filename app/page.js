@@ -55,7 +55,7 @@ const CHAT_MSGS = [
 
 const FX_CURRENCIES = [
   { code: 'USD', name: 'US Dollar',    color: '#477EE9' },
-  { code: 'AUD', name: 'AUD Dollar',   color: '#f73b20' },
+  { code: 'AUD', name: 'AUD Dollar',   color: '#ff751f' },
   { code: 'CNY', name: 'Chinese CNY',  color: '#c23030' },
   { code: 'HKD', name: 'HK Dollar',    color: '#7b5ed0' },
   { code: 'EUR', name: 'Euro',         color: '#2a6fdb' },
@@ -395,7 +395,7 @@ export default function HomePage() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          background: rgba(247,59,32,0.08);
+          background: rgba(255,117,31,0.08);
           border-radius: 999px;
           padding: 10px 20px;
           font-size: 14px;
@@ -404,7 +404,7 @@ export default function HomePage() {
           width: 8px;
           height: 8px;
           border-radius: 50%;
-          background: #f73b20;
+          background: #ff751f;
           flex-shrink: 0;
         }
         .ibnk-feature-card {
@@ -531,7 +531,7 @@ export default function HomePage() {
               <h3 className="-medium" style={{ color: 'var(--color)' }}>{t('pillars.bridge')}</h3>
             </div>
           </li>
-          <li style={{ '--color': '#f73b20', '--index': 2 }}>
+          <li style={{ '--color': '#ff751f', '--index': 2 }}>
             <div className="flex gap-20 items-center">
               <div className="icon-card grid place-center" style={{ backgroundColor: 'var(--color)', borderRadius: 'clamp(12px, 10.791px + 100vw * 0.0031, 24px)' }}>
                 <span className="_icon" style={{ '--color': '#fff', '--size': 'var(--48-24)' }}>
@@ -829,7 +829,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="g-col xxl-2 md-2 sm-16 xs-16 flex items-center justify-center hide-xs">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" style={{ opacity: 0.3 }}><path d="M5 12h14M12 5l7 7-7 7" stroke="#f73b20" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" style={{ opacity: 0.3 }}><path d="M5 12h14M12 5l7 7-7 7" stroke="#ff751f" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </div>
           <div className="g-col xxl-7 md-7 sm-16 xs-16">
             <div className="ibnk-rail-card" style={{ height: '100%' }}>
@@ -888,7 +888,7 @@ export default function HomePage() {
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M3 21V10l9-6 9 6v11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /><path d="M9 21v-6h6v6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </div>
               <span className="product-card__eyebrow">For Your Business</span>
-              <h3 className="product-card__title">Global Business Account</h3>
+              <h3 className="product-card__title">Universal business account</h3>
               <p className="product-card__body">Hold modern digital dollars and traditional fiat side-by-side. Pay anyone, anywhere, in seconds—without the usual bank delays.</p>
               <ul className="product-card__list">
                 <li>Hybrid Cash Balance (Stablecoin &amp; Fiat)</li>
@@ -908,7 +908,7 @@ export default function HomePage() {
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="3" stroke="currentColor" strokeWidth="1.8" /><circle cx="9" cy="12" r="1.2" fill="currentColor" /><circle cx="15" cy="12" r="1.2" fill="currentColor" /><path d="M12 2v4M8 18l-1 3M16 18l1 3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
               </div>
               <span className="product-card__eyebrow">For Your Agent</span>
-              <h3 className="product-card__title">One account. Now agent-accessible.</h3>
+              <h3 className="product-card__title">One account, agent-accessible.</h3>
               <p className="product-card__body">Give your AI agent its own scoped key into your iBnk account — with the spending limits and audit trail you set. Same wallet, same rails, programmatic access.</p>
               <a href="https://cal.com/yi-zhang-avxwyp/15min" target="_blank" rel="noreferrer" className="product-card__cta">Talk to us <span aria-hidden="true">→</span></a>
             </article>
@@ -1011,6 +1011,15 @@ export default function HomePage() {
       </section>
 
       <CtaMillion />
+
+      {/* Operating status — fixed bottom-right, above the support button */}
+      <div className="op-status" role="status" aria-label="Operating status: 24/7/365">
+        <span className="op-status__dot" aria-hidden="true" />
+        <span className="op-status__text">
+          <span className="op-status__label">Operating Status</span>
+          <span className="op-status__value">24 / 7 / 365</span>
+        </span>
+      </div>
     </>
   )
 }

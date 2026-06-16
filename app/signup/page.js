@@ -26,14 +26,14 @@ export default function SignupPage() {
         alignItems: 'center',
         justifyContent: 'center',
         padding: 'clamp(96px, 12vw, 160px) clamp(20px, 5vw, 40px) clamp(64px, 8vw, 120px)',
-        background: '#fafafa',
+        background: '#f8faf8',
       }}
     >
       <div
         style={{
           width: '100%',
           maxWidth: 460,
-          background: '#fff',
+          background: '#f8faf8',
           borderRadius: 22,
           padding: 'clamp(28px, 4vw, 44px)',
           boxShadow: '0 20px 60px rgba(0,0,0,0.06)',
@@ -82,7 +82,7 @@ export default function SignupPage() {
             style={{
               width: '100%',
               padding: '14px 16px',
-              border: status === 'invalid' ? '1px solid #f73b20' : '1px solid rgba(0,0,0,0.12)',
+              border: status === 'invalid' ? '1px solid #ff751f' : '1px solid rgba(0,0,0,0.12)',
               borderRadius: 12,
               fontSize: 15,
               outline: 'none',
@@ -106,7 +106,7 @@ export default function SignupPage() {
               width: '100%',
               padding: '14px 18px',
               borderRadius: 999,
-              background: '#f73b20',
+              background: '#ff751f',
               color: '#fff',
               border: 'none',
               fontSize: 15,
@@ -135,7 +135,7 @@ export default function SignupPage() {
               border: 'none',
               padding: 0,
               fontSize: 14,
-              color: '#f73b20',
+              color: '#ff751f',
               fontWeight: 500,
               cursor: 'pointer',
               fontFamily: 'inherit',

@@ -103,9 +103,9 @@ export default function Orb({
       return vec4(colorIn.rgb / (a + 1e-5), a);
     }
 
-    // iBnk orange palette — #f73b20 primary, with warm gold highlight and deep ember shadow
+    // iBnk orange palette — #ff751f primary, with warm gold highlight and deep ember shadow
     const vec3 baseColor1 = vec3(1.000000, 0.666667, 0.227451); // #ffaa3a — warm gold highlight
-    const vec3 baseColor2 = vec3(0.968627, 0.231373, 0.125490); // #f73b20 — iBnk orange
+    const vec3 baseColor2 = vec3(1.000000, 0.458824, 0.121569); // #ff751f — iBnk orange
     const vec3 baseColor3 = vec3(0.250980, 0.043137, 0.011765); // #400b03 — deep ember
     const float innerRadius = 0.6;
     const float noiseScale = 0.65;

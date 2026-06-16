@@ -53,11 +53,11 @@ export default function CtaMillion() {
         <h2 className="title-1 -medium w-cols-12 sm-w-cols-14 xs-w-cols-16">The future of payments starts here.</h2>
         <p className="subhead-2 -medium w-cols-10 xs-w-cols-12 mt-64-24">It only takes a few minutes to get started.</p>
         <div className="flex gap-24 mt-64-48">
-          <a href="https://cal.com/yi-zhang-avxwyp/15min" target="_blank" rel="noopener noreferrer" className="_button no-tap-highlight" data-button="" data-label="true" data-tone="orange" data-variant="primary">
+          <a href="/book-demo" className="_button no-tap-highlight" data-button="" data-label="true" data-tone="orange" data-variant="primary">
             <div data-button-background=""></div>
             <span className="label relative body -book">
-              <span data-split-text="" className="whitespace-nowrap"><span className="c">B</span><span className="c">o</span><span className="c">o</span><span className="c">k</span><span className="c -space"> </span><span className="c">a</span><span className="c -space"> </span><span className="c">D</span><span className="c">e</span><span className="c">m</span><span className="c">o</span></span>
-              <span data-split-text="" className="clone whitespace-nowrap" aria-hidden="true"><span className="c">B</span><span className="c">o</span><span className="c">o</span><span className="c">k</span><span className="c -space"> </span><span className="c">a</span><span className="c -space"> </span><span className="c">D</span><span className="c">e</span><span className="c">m</span><span className="c">o</span></span>
+              <span data-split-text="" className="whitespace-nowrap"><span className="c">B</span><span className="c">o</span><span className="c">o</span><span className="c">k</span><span className="c -space"> </span><span className="c">D</span><span className="c">e</span><span className="c">m</span><span className="c">o</span></span>
+              <span data-split-text="" className="clone whitespace-nowrap" aria-hidden="true"><span className="c">B</span><span className="c">o</span><span className="c">o</span><span className="c">k</span><span className="c -space"> </span><span className="c">D</span><span className="c">e</span><span className="c">m</span><span className="c">o</span></span>
             </span>
           </a>
           <a href="mailto:support@ibnk.xyz" className="_button no-tap-highlight" data-button="" data-label="true" data-tone="orange" data-variant="outline">
@@ -79,11 +79,11 @@ export default function CtaMillion() {
         <h2 className="title-1 -medium w-cols-12 sm-w-cols-14 xs-w-cols-16">The future of payments starts here.</h2>
         <p className="subhead-2 -medium w-cols-10 xs-w-cols-12 mt-64-24">It only takes a few minutes to get started.</p>
         <div className="flex gap-24 mt-64-48">
-          <a href="https://cal.com/yi-zhang-avxwyp/15min" target="_blank" rel="noopener noreferrer" className="_button no-tap-highlight" data-button="" data-label="true" data-tone="neutral" data-variant="primary">
+          <a href="/book-demo" className="_button no-tap-highlight" data-button="" data-label="true" data-tone="neutral" data-variant="primary">
             <div data-button-background=""></div>
             <span className="label relative body -book">
-              <span data-split-text="" className="whitespace-nowrap"><span className="c">B</span><span className="c">o</span><span className="c">o</span><span className="c">k</span><span className="c -space"> </span><span className="c">a</span><span className="c -space"> </span><span className="c">D</span><span className="c">e</span><span className="c">m</span><span className="c">o</span></span>
-              <span data-split-text="" className="clone whitespace-nowrap" aria-hidden="true"><span className="c">B</span><span className="c">o</span><span className="c">o</span><span className="c">k</span><span className="c -space"> </span><span className="c">a</span><span className="c -space"> </span><span className="c">D</span><span className="c">e</span><span className="c">m</span><span className="c">o</span></span>
+              <span data-split-text="" className="whitespace-nowrap"><span className="c">B</span><span className="c">o</span><span className="c">o</span><span className="c">k</span><span className="c -space"> </span><span className="c">D</span><span className="c">e</span><span className="c">m</span><span className="c">o</span></span>
+              <span data-split-text="" className="clone whitespace-nowrap" aria-hidden="true"><span className="c">B</span><span className="c">o</span><span className="c">o</span><span className="c">k</span><span className="c -space"> </span><span className="c">D</span><span className="c">e</span><span className="c">m</span><span className="c">o</span></span>
             </span>
           </a>
           <a href="mailto:support@ibnk.xyz" className="_button no-tap-highlight" data-button="" data-label="true" data-tone="neutral" data-variant="outline">

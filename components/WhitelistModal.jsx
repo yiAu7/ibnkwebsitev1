@@ -75,7 +75,7 @@ export default function WhitelistModal({ open, onClose }) {
     borderRadius: 10,
     fontSize: 14,
     outline: 'none',
-    background: '#fff',
+    background: '#f8faf8',
     color: '#1a1a1a',
     fontFamily: 'inherit',
   };
@@ -112,7 +112,7 @@ export default function WhitelistModal({ open, onClose }) {
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
-          background: '#fff',
+          background: '#f8faf8',
           borderRadius: 22,
           width: '100%',
           maxWidth: 480,
@@ -172,7 +172,7 @@ export default function WhitelistModal({ open, onClose }) {
           <div style={{ padding: '0 32px 36px', textAlign: 'center' }}>
             <div style={{
               width: 56, height: 56, borderRadius: '50%',
-              background: 'rgba(247,59,32,0.1)', color: '#f73b20',
+              background: 'rgba(255,117,31,0.1)', color: '#ff751f',
               display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
               marginBottom: 14,
             }}>
@@ -188,7 +188,7 @@ export default function WhitelistModal({ open, onClose }) {
               onClick={onClose}
               style={{
                 marginTop: 20, padding: '10px 24px', borderRadius: 999,
-                background: '#f73b20', color: '#fff', border: 'none',
+                background: '#ff751f', color: '#fff', border: 'none',
                 fontSize: 14, fontWeight: 500, cursor: 'pointer', fontFamily: 'inherit',
               }}
             >
@@ -267,7 +267,7 @@ export default function WhitelistModal({ open, onClose }) {
             </div>
 
             {status === 'error' && (
-              <div style={{ fontSize: 13, color: '#c92510', background: 'rgba(247,59,32,0.06)', padding: '10px 12px', borderRadius: 8 }}>
+              <div style={{ fontSize: 13, color: '#c92510', background: 'rgba(255,117,31,0.06)', padding: '10px 12px', borderRadius: 8 }}>
                 Something went wrong. Please try again, or email <a href="mailto:ivy@ibnk.xyz" style={{ color: '#c92510', textDecoration: 'underline' }}>ivy@ibnk.xyz</a> directly.
               </div>
             )}
@@ -279,7 +279,7 @@ export default function WhitelistModal({ open, onClose }) {
                 marginTop: 6,
                 padding: '13px 18px',
                 borderRadius: 999,
-                background: '#f73b20',
+                background: '#ff751f',
                 color: '#fff',
                 border: 'none',
                 fontSize: 15,
